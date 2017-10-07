@@ -3,17 +3,8 @@ using Xamarin.Forms;
 
 namespace Theme.Controls
 {
-	public class CircleControl : View
+	public class CircleControl : BoxView
 	{
-		public static readonly BindableProperty FillColorProperty =
-			   BindableProperty.Create(nameof(FillColor), typeof(Color), typeof(CircleControl), Color.Black);
-
-		public Color FillColor
-		{
-			get { return (Color)GetValue(FillColorProperty); }
-			set { SetValue(FillColorProperty, value); }
-		}
-
 		public static readonly BindableProperty StrokeColorProperty =
 			   BindableProperty.Create(nameof(StrokeColor), typeof(Color), typeof(CircleControl), Color.Black);
 
@@ -31,5 +22,45 @@ namespace Theme.Controls
 			get { return (bool)GetValue(ActiveProperty); }
 			set { SetValue(ActiveProperty, value); }
 		}
+
+		/// <summary>
+		/// The border width property.
+		/// </summary>
+		public static readonly BindableProperty BorderWidthProperty =
+			BindableProperty.Create("CornerRadius", typeof(double), typeof(CircleControl), 0.0);
+
+		/// <summary>
+		/// Gets or sets the border width.
+		/// </summary>
+		public double BorderWidth
+		{
+			get { return (double)GetValue(BorderWidthProperty); }
+			set
+			{
+
+				SetValue(BorderWidthProperty, value);
+			}
+		}
+
+		/// <summary>
+		/// The corner radius property.
+		/// </summary>
+		public static readonly BindableProperty CornerRadiusProperty =
+			BindableProperty.Create("CornerRadius", typeof(double), typeof(CircleControl), 0.0);
+
+		/// <summary>
+		/// Gets or sets the corner radius.
+		/// </summary>
+		public double CornerRadius
+		{
+			get { return (double)GetValue(CornerRadiusProperty); }
+			set
+			{
+
+				SetValue(CornerRadiusProperty, value);
+			}
+		}
+
+		
 	}
 }

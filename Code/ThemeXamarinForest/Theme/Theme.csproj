@@ -36,6 +36,9 @@
     <EmbeddedResource Include="Views\IconsDashboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Templates\CircleNotificationView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -56,6 +59,9 @@
     </Compile>
     <Compile Include="Controls\CircleControl.cs" />
     <Compile Include="ViewModels\IconsDashboardViewModel.cs" />
+    <Compile Include="Views\Templates\CircleNotificationView.xaml.cs">
+      <DependentUpon>CircleNotificationView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -96,6 +102,7 @@
     <Folder Include="Models\" />
     <Folder Include="Controls\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Views\Templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

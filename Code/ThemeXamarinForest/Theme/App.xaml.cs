@@ -2,6 +2,9 @@
 using Theme.ViewModels;
 using Theme.Views;
 using Xamarin.Forms;
+using Microsoft.Practices.Unity;
+using Prism.Mvvm;
+using Theme.Views.Templates;
 
 namespace Theme
 {

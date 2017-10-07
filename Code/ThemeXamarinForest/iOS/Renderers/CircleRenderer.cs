@@ -10,17 +10,25 @@ using CoreGraphics;
 [assembly: ExportRenderer(typeof(CircleControl), typeof(CircleRenderer))]
 namespace Theme.iOS.Renderers
 {
-    public class CircleRenderer : ViewRenderer<CircleControl, UIView>
+    public class CircleRenderer : BoxRenderer
     {
+		/// <summary>
+		/// Gets the underlying element typed as an <see cref="CircleControl"/>.
+		/// </summary>
+		private CircleControl CircleControl
+		{
+			get { return (CircleControl)Element; }
+		}
+
         
-        protected override void OnElementChanged(ElementChangedEventArgs<CircleControl> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
 		{
 			base.OnElementChanged(e);
-			if (Control == null)
+			/* (Control == null)
 			{
-				var circleDotView = new UIView();
-				SetNativeControl(circleDotView);
-			}
+				var circleView = new BoxView();
+				SetNativeControl(circleView);
+			}*/
 		}
 
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -34,26 +42,25 @@ namespace Theme.iOS.Renderers
 
 		public override void Draw(CGRect rect)
 		{
-			DrawCircleDot(rect, Element.FillColor.ToUIColor(), Element.StrokeColor.ToUIColor(), Element.Active);
+            DrawCircle(rect);
 		}
 
-		private void DrawCircleDot(CGRect frame, UIColor colorFill, UIColor colorStroke, bool circleDotActive)
+        private void DrawCircle(CGRect rect)
 		{
 
-			if (circleDotActive)
-			{
-				//// circleDotFill Drawing
-				var circleDotFillPath = UIBezierPath.FromOval(new CGRect(frame.GetMinX() + 1.0f, frame.GetMinY() + 1.0f, frame.Width - 2.0f, frame.Height - 2.0f));
-				colorFill.SetFill();
-				circleDotFillPath.Fill();
-			}
+            // Border
+          /*  rect.Width = (float)circleControl.WidthRequest;
+            rect.Height = (float)circleControl.Height;*/
+            this.Layer.CornerRadius = Convert.ToSingle(CircleControl.CornerRadius);
+            this.Layer.BorderWidth = Convert.ToSingle(CircleControl.BorderWidth);
+            this.Layer.BorderColor = CircleControl.StrokeColor.ToCGColor();
+            this.Layer.BackgroundColor = Element.BackgroundColor.ToCGColor();
 
 
-			//// circleDotStroke Drawing
-			var circleDotStrokePath = UIBezierPath.FromOval(new CGRect(frame.GetMinX() + 1.0f, frame.GetMinY() + 1.0f, frame.Width - 2.0f, frame.Height - 2.0f));
-			colorStroke.SetStroke();
-			circleDotStrokePath.LineWidth = 1.5f;
-			circleDotStrokePath.Stroke();
+            var t = new Label();
+            t.Text = "9";
+           // this.Layer.AddSublayer(t);
+
 		}
 	}
 }

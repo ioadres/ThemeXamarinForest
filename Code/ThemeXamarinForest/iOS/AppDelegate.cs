@@ -22,7 +22,7 @@ namespace Theme.iOS
             global::Xamarin.Forms.Forms.Init();
                       
            
-                      //  LoadApplication(new App(new iOSInitializer()));
+                      // LoadApplication(new App(new iOSInitializer()));
 
                         LoadApplication(UXDivers.Gorilla.iOS.Player.CreateApplication(
                             new UXDivers.Gorilla.Config("Good Gorilla")
