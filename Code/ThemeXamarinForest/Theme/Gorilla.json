@@ -1,0 +1,12 @@
+﻿{
+  "knownAssemblies": [
+    { "name": "Prism" },
+    { "name": "Prism.Forms" },
+    { "name": "Prism.Unity.Forms" },
+
+    { "name": "Theme" },
+    { "name": "Theme.Views" },
+    { "name": "Theme.ViewModels" },
+    { "name": "Theme.Controls" }
+  ]
+}

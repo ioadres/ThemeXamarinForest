@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Theme.Views.IconsDashboard"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns:control="clr-namespace:Theme.Controls"
+    >
+    <ContentPage.Content>
+        <Grid BackgroundColor="#d7eae5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                
+             <control:CircleControl Active="true"
+                                WidthRequest="30"
+                                HeightRequest="30" 
+                                FillColor="#eeeeee"
+                                VerticalOptions="Center"
+                                StrokeColor="#eeeeee" />
+                
+                
+            </StackLayout>
+
+            
+            <!-- START Border Grid -->
+            <BoxView Grid.Row="0" Grid.ColumnSpan="3" HeightRequest="2" VerticalOptions="End" BackgroundColor="#d0e2dd" ></BoxView>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="2" VerticalOptions="End" BackgroundColor="#d0e2dd" ></BoxView>
+            <BoxView Grid.RowSpan="3" Grid.Column="0" WidthRequest="2"  HorizontalOptions="End" BackgroundColor="#d0e2dd" ></BoxView>
+            <BoxView Grid.RowSpan="3" Grid.Column="1" WidthRequest="2"  HorizontalOptions="End" BackgroundColor="#d0e2dd" ></BoxView>
+            <!-- END Border Grid -->
+        </Grid>
+    </ContentPage.Content>
+
+
+    <ContentPage.Resources>
+    <ResourceDictionary x:Name="AppDictionary">
+      <Color x:Key="BackgroundColor">#FFFFFF</Color>
+      <Color x:Key="BorderColor">#E1E1E1</Color>
+      <Style x:Key="InternalViewStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor" 
+            Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="Padding" Value="10,10,10,10"></Setter>
+      </Style>
+      <Style x:Key="BorderStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Padding" Value="3,1,1,3"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+</ContentPage>
