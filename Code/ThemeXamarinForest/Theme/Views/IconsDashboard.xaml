@@ -19,26 +19,59 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <!-- START Circle Notification Row 0 -->
             <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-              <template:CircleNotificationView HorizontalOptions="Center" BgColor="#7E023F" />
-              
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#7E023F" TextColor="#FFFFFF" Text="&#xf2c0;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
 
              <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
-               <template:CircleNotificationView HorizontalOptions="Center" BgColor="#A50252" />
-              
-                <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+               <template:CircleIconDashboardView HorizontalOptions="Center" Background="#A50252" TextColor="#FFFFFF" Text="&#xf016;"/>
+               <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="0" Grid.Column="2" VerticalOptions="Center">
-                <template:CircleNotificationView HorizontalOptions="Center" BgColor="#E40372" />
-              
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#E40372" TextColor="#FFFFFF" Text="&#xf12e;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
+            <!-- END Circle Notification -->
 
+            <!-- START Circle Notification Row 1 -->
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#7F3D87" TextColor="#FFFFFF" Text="&#xf0c9;"/>
+                <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
 
+             <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
+               <template:CircleIconDashboardView HorizontalOptions="Center" Background="#A34EAE" TextColor="#FFFFFF" Text="&#xf023;"/>
+               <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
 
+            <StackLayout Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#DF6AED£" TextColor="#FFFFFF" Text="&#xf07a;"/>
+                <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
+            <!-- END Circle Notification -->
+
+            <!-- START Circle Notification Row 2 -->
+            <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Center">
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#6A7993" TextColor="#FFFFFF" Text="&#xf10b;"/>
+                <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
+
+             <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center">
+               <template:CircleIconDashboardView HorizontalOptions="Center" Background="#8699B9" TextColor="#FFFFFF" Text="&#xf0e0;"/>
+               <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="2" VerticalOptions="Center">
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#9DB4DA" TextColor="#FFFFFF" Text="&#xf108;"/>
+                <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
+            </StackLayout>
+            <!-- END Circle Notification -->
+
+
+            
             <!-- START Border Grid -->
             <BoxView Grid.Row="0" Grid.ColumnSpan="3" HeightRequest="2" VerticalOptions="End" BackgroundColor="#d0e2dd">
             </BoxView>

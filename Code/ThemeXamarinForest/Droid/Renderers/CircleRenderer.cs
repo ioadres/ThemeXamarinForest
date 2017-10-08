@@ -11,72 +11,47 @@ using System.ComponentModel;
 [assembly: ExportRenderer(typeof(CircleControl), typeof(CircleRenderer))]
 namespace Theme.Droid.Renders
 {
-	public class CircleRenderer : ViewRenderer<CircleControl, Android.Views.View>
+	public class CircleRenderer : BoxRenderer
 	{
 		public CircleRenderer()
 		{
 			this.SetWillNotDraw(false);
 		}
 
-		protected override void OnElementChanged(ElementChangedEventArgs<CircleControl> e)
+		protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
 		{
 			base.OnElementChanged(e);
-			if (Control == null)
-			{
-				var circleDotView = new Android.Views.View(Forms.Context);
-				SetNativeControl(circleDotView);
-			}
+
+			SetWillNotDraw(false);
+
+			Invalidate();
 		}
 
-		protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			base.OnElementPropertyChanged(sender, e);
-			if (e.PropertyName == CircleControl.ActiveProperty.PropertyName)
+
+			if (e.PropertyName == CircleControl.CornerRadiusProperty.PropertyName)
 			{
 				Invalidate();
 			}
 		}
 
-		protected override void OnDraw(Android.Graphics.Canvas canvas)
+		public override void Draw(Canvas canvas)
 		{
+			var box = Element as CircleControl;
 			var rect = new Rect();
-			this.GetDrawingRect(rect);
-			Paint paint;
-
-			// circleDotFill
-			if (Element.Active)
+			var paint = new Paint()
 			{
-				RectF circleDotFillRect = new RectF(
-					rect.Left + 1f,
-					rect.Top + 1f,
-					rect.Right - 1f,
-					rect.Bottom - 1f);
-				Path circleDotFillPath = new Path();
-				circleDotFillPath.AddOval(circleDotFillRect, Path.Direction.Cw);
+				Color = box.BackgroundColor.ToAndroid(),
+				AntiAlias = true,
+			};
 
-				paint = new Paint(PaintFlags.AntiAlias);
-				paint.SetStyle(Paint.Style.Fill);
-				paint.Color = Element.FillColor.ToAndroid();
-				canvas.DrawPath(circleDotFillPath, paint);
-			}
+			GetDrawingRect(rect);
 
-			// circleDotStroke
-			RectF circleDotStrokeRect = new RectF(
-				rect.Left + 1f,
-				rect.Top + 1f,
-				rect.Right - 1f,
-				rect.Bottom - 1f);
-			Path circleDotStrokePath = new Path();
-			circleDotStrokePath.AddOval(circleDotStrokeRect, Path.Direction.Cw);
+            var radius = (float)(rect.Width() / box.Width * box.CornerRadius);
 
-			paint = new Paint(PaintFlags.AntiAlias);
-			paint.StrokeWidth = 2.5f;
-			paint.StrokeMiter = 10f;
-			canvas.Save();
-			paint.SetStyle(Paint.Style.Stroke);
-			paint.Color = Element.StrokeColor.ToAndroid();
-			canvas.DrawPath(circleDotStrokePath, paint);
-			canvas.Restore();
+			canvas.DrawRoundRect(new RectF(rect), radius, radius, paint);
 		}
 	}
 }

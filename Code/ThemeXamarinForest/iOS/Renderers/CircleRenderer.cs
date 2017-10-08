@@ -47,20 +47,8 @@ namespace Theme.iOS.Renderers
 
         private void DrawCircle(CGRect rect)
 		{
-
-            // Border
-          /*  rect.Width = (float)circleControl.WidthRequest;
-            rect.Height = (float)circleControl.Height;*/
-            this.Layer.CornerRadius = Convert.ToSingle(CircleControl.CornerRadius);
-            this.Layer.BorderWidth = Convert.ToSingle(CircleControl.BorderWidth);
-            this.Layer.BorderColor = CircleControl.StrokeColor.ToCGColor();
+            this.Layer.CornerRadius = Convert.ToSingle(CircleControl.CornerRadius);       
             this.Layer.BackgroundColor = Element.BackgroundColor.ToCGColor();
-
-
-            var t = new Label();
-            t.Text = "9";
-           // this.Layer.AddSublayer(t);
-
 		}
 	}
 }

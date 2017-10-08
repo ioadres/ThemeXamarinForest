@@ -27,7 +27,7 @@ namespace Theme.Droid
 
 			//LoadApplication(new App());
 
-            LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication((Android.App.Activity)ApplicationContext, new Config("Good Gorilla")
+            LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
 				 .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
 						.RegisterAssemblyFromType<CircleControl>()
 						.RegisterAssemblyFromType<CircleRenderer>()

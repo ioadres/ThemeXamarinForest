@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Theme.Views.Templates.Models;
 using Xamarin.Forms;
 
 namespace Theme.Views.Templates
 {
     public partial class CircleNotificationView : ContentView
     {
-		public static readonly BindableProperty BgColorProperty = BindableProperty.Create(nameof(BgColor), typeof(string), typeof(CircleNotificationView));
+		public CircleViewModel Circle
+		{
+			get;
+			set;
+		}
 
-		public string BgColor
-        {
-            get
-            {
-                return (string)GetValue(BgColorProperty);
-            }
-            set
-            {
-                SetValue(BgColorProperty, value);
-            }
-        }
-
-        public CircleNotificationView()
-        {
-            InitializeComponent();
-        }
+		public CircleNotificationView()
+		{
+			Circle = new CircleViewModel("");
+			InitializeComponent();
+		}
     }
 }

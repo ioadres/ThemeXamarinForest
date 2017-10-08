@@ -5,27 +5,16 @@
     x:Name="this"
     x:Class="Theme.Views.Templates.CircleNotificationView" xmlns:control="clr-namespace:Theme.Controls">
 
-    <AbsoluteLayout Padding="5,5,5,5">
-        <control:CircleControl Active="true" 
-            WidthRequest="70" 
-            HeightRequest="70" 
-            CornerRadius="36" 
-            BorderWidth="1" 
-            TranslationY="5"
-            BackgroundColor="{Binding BgColor, Source={x:Reference this}}"
-            StrokeColor="#98024D">
-        </control:CircleControl>
-
-         <AbsoluteLayout TranslationX="45">
+    <AbsoluteLayout>
              <control:CircleControl 
                 Active="true" 
                 WidthRequest="30" 
                 HeightRequest="30"  
-                CornerRadius="14" 
-                BorderWidth="0" 
-                BackgroundColor="#26af5e">
+                CornerRadius="14"
+                BackgroundColor="{Binding Background, Source={x:Reference this}}">
             </control:CircleControl>
-                <Label Text="2" TextColor="#FFFFFF" TranslationX="10" TranslationY="3" FontFamily="Droid Sans Mono"></Label>
-         </AbsoluteLayout>
+                <Label Text="{Binding Text, Source={x:Reference this}}" 
+                TextColor="{Binding TextColor, Source={x:Reference this}}"
+                TranslationX="12" TranslationY="3" FontFamily="Droid Sans Mono"></Label>
     </AbsoluteLayout>
 </ContentView>
