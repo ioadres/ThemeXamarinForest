@@ -48,7 +48,7 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
-                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#DF6AED£" TextColor="#FFFFFF" Text="&#xf07a;"/>
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#DF6AED" TextColor="#FFFFFF" Text="&#xf07a;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
             <!-- END Circle Notification -->
