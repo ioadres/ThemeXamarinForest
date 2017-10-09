@@ -9,7 +9,14 @@ namespace Theme.Views
     {
         public HomePage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception e)
+            {
+            }
+
         }
     }
 }

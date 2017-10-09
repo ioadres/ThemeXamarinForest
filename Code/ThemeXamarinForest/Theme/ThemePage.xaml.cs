@@ -6,7 +6,6 @@ namespace Theme
     {
         public ThemePage()
         {
-            InitializeComponent();
         }
     }
 }

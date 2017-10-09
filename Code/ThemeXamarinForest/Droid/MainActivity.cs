@@ -10,6 +10,11 @@ using Android.OS;
 using UXDivers.Gorilla;
 using Theme.Controls;
 using Theme.Droid.Renders;
+using Theme.ViewModels;
+using Theme.Views;
+using Prism;
+using Microsoft.Practices.Unity;
+using Prism.Unity;
 
 namespace Theme.Droid
 {
@@ -25,14 +30,14 @@ namespace Theme.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			//LoadApplication(new App());
+            LoadApplication(new App(new AndroidInitializer()));
 
-            LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
+           /* LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
 				 .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
 						.RegisterAssemblyFromType<CircleControl>()
-						.RegisterAssemblyFromType<CircleRenderer>()
+						.RegisterAssemblyFromType<CircleRenderer>() 
 			));
-
+            */
 
         }
 
@@ -40,5 +45,16 @@ namespace Theme.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
         }
+
+
     }
+    public class AndroidInitializer : IPlatformInitializer
+    {
+
+        public void RegisterTypes(IUnityContainer container)
+        {
+
+        }
+    }
+
 }

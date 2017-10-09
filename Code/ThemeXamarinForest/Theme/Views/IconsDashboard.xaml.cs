@@ -9,7 +9,14 @@ namespace Theme.Views
     {
         public IconsDashboard()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception e)
+            {
+            }
+
         }
     }
 }

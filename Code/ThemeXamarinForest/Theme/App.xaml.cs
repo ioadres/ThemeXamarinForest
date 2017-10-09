@@ -5,25 +5,25 @@ using Xamarin.Forms;
 using Microsoft.Practices.Unity;
 using Prism.Mvvm;
 using Theme.Views.Templates;
+using System;
 
 namespace Theme
 {
-	public partial class App : PrismApplication
-	{
-		public App(IPlatformInitializer initializer = null) : base(initializer) { }
+    public partial class App : PrismApplication
+    {
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-		protected async override void OnInitialized()
-		{
-			InitializeComponent();
+        protected async override void OnInitialized()
+        {
 
-			await NavigationService.NavigateAsync("IconsDashboard");
-		}
+            InitializeComponent();
+            await NavigationService.NavigateAsync("IconsDashboard");
+        }
 
-
-		protected override void RegisterTypes()
-		{			
-			Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
+        protected override void RegisterTypes()
+        {
+            Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
             Container.RegisterTypeForNavigation<IconsDashboard, IconsDashboardViewModel>();
-		}
-	}
+        }
+    }
 }

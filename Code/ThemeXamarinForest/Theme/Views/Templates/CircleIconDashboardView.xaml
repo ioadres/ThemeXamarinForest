@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -20,12 +20,12 @@
                       iOS="30"
                       Android="36" />
             </control:CircleControl.CornerRadius>
-            
+
         </control:CircleControl>
 
         <Label AbsoluteLayout.LayoutBounds="0.5, 0.6, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Text="{Binding Text, Source={x:Reference this}}" FontSize="25" FontFamily="FontAwesome" TextColor="{Binding TextColor, Source={x:Reference this}}"/>
-        
-       
+
+
         <AbsoluteLayout TranslationX="40" TranslationY="-5">
             <template:CircleNotificationView HorizontalOptions="Center" Background="#26af5e" TextColor="#FFFFFF" Text="2"/>
         </AbsoluteLayout>

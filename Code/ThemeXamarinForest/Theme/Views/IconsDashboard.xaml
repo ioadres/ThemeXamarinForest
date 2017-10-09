@@ -20,7 +20,14 @@
             </Grid.ColumnDefinitions>
 
             <!-- START Circle Notification Row 0 -->
-            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
+            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding EnterArticlesCommand}"
+                        ></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+                    
                 <template:CircleIconDashboardView HorizontalOptions="Center" Background="#7E023F" TextColor="#FFFFFF" Text="&#xf2c0;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>

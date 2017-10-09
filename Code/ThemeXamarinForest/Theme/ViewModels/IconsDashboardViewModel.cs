@@ -1,5 +1,6 @@
 ﻿using System;
 using Prism.Navigation;
+using Prism.Commands;
 
 namespace Theme.ViewModels
 {
@@ -7,6 +8,13 @@ namespace Theme.ViewModels
     {
         public IconsDashboardViewModel(INavigationService navigationService) : base(navigationService)
         {
+            EnterArticlesCommand = new DelegateCommand(EnterArticles);
+        }
+
+        public DelegateCommand EnterArticlesCommand { get; set; }
+        public void EnterArticles()
+        {
+
         }
     }
 }
