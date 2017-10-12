@@ -5,45 +5,74 @@ using Xamarin.Forms.Platform.Android;
 
 using Android.Widget;
 using Android.Graphics;
+using Theme.Controls;
+using System.ComponentModel;
+using Android.Views;
 
-[assembly: ExportRenderer(typeof(Label), typeof(AwesomeLabelRenderer))]
-[assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(AwesomeButtonRenderer))]
+[assembly: ExportRenderer(typeof(AwesomeLabelControl), typeof(AwesomeLabelRenderer))]
 namespace Theme.Droid.Renderers
 {
 
 	public class AwesomeLabelRenderer : LabelRenderer
 	{
+        private static Typeface _Typeface;
+
 		protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
 		{
 			base.OnElementChanged(e);
 
-			AwesomeUtil.CheckAndSetTypeFace(Control);
-		}
-	}
-
-	public class AwesomeButtonRenderer : ButtonRenderer
-	{
-		protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
-		{
-			base.OnElementChanged(e);
-
-			AwesomeUtil.CheckAndSetTypeFace(Control);
-		}
-	}
-
-	internal static class AwesomeUtil
-	{
-		public static void CheckAndSetTypeFace(TextView view)
-		{
-			if (view.Text.Length == 0) return;
-			var text = view.Text;
-			if (text.Length > 1 || text[0] < 0xf000)
+			if (e.OldElement == null)
 			{
-				return;
+				this.SetTypeface();
+			}
+		}
+
+		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			base.OnElementPropertyChanged(sender, e);
+			if (e.PropertyName == "Text")
+			{
+				this.SetTypeface();
+			}
+		}		
+		
+
+		protected override void OnDisplayHint(int hint)
+		{
+			base.OnDisplayHint(hint);
+			if (hint == (int)Android.Views.SystemUiFlags.Visible)
+			{
+				this.SetTypeface();
+			}
+		}
+
+		protected override void OnDraw(Canvas canvas)
+		{
+			this.SetTypeface();
+			base.OnDraw(canvas);
+		}
+		
+		protected override void OnAttachedToWindow()
+		{
+			this.SetTypeface();
+			base.OnAttachedToWindow();
+		}
+
+		protected override void OnVisibilityChanged(Android.Views.View changedView, ViewStates visibility)
+		{
+			this.SetTypeface();
+			base.OnVisibilityChanged(changedView, visibility);
+		}
+
+		private void SetTypeface()
+		{
+			if (_Typeface == null)
+			{
+				//The ttf in /Assets is CaseSensitive, so name it FontAwesome.ttf
+				_Typeface = Typeface.CreateFromAsset(Forms.Context.Assets, AwesomeLabelControl.Typeface + ".ttf");
 			}
 
-			var font = Typeface.CreateFromAsset(Xamarin.Forms.Forms.Context.ApplicationContext.Assets, "fontawesome.ttf");
-			view.Typeface = font;
+			this.Control.Typeface = _Typeface;
 		}
 	}
 }

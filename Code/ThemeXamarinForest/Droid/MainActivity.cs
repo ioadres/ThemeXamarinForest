@@ -15,6 +15,7 @@ using Theme.Views;
 using Prism;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
+using Theme.Droid.Renderers;
 
 namespace Theme.Droid
 {
@@ -35,10 +36,11 @@ namespace Theme.Droid
            /* LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
 				 .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
 						.RegisterAssemblyFromType<CircleControl>()
-						.RegisterAssemblyFromType<CircleRenderer>() 
-			));
-            */
-
+						.RegisterAssemblyFromType<CircleRenderer>()
+                        .RegisterAssemblyFromType<AwesomeLabelControl>()
+                        .RegisterAssemblyFromType<AwesomeLabelRenderer>()
+			));*/
+            
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

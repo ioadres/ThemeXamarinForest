@@ -1,33 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Name="this"
     xmlns:template="clr-namespace:Theme.Views.Templates"
+    x:Name="this"
     x:Class="Theme.Views.Templates.CircleIconDashboardView" xmlns:control="clr-namespace:Theme.Controls">
 
-    <AbsoluteLayout Padding="5,5,5,5">
-        <control:CircleControl Active="true" 
-            WidthRequest="60" 
-            HeightRequest="60" 
-            CornerRadius="36" 
-            BorderWidth="1" 
+    <AbsoluteLayout TranslationY="-10">
+        <control:CircleControl  
+            WidthRequest="65" 
+            HeightRequest="65" 
+            CornerRadius="36"  
             TranslationY="5"
-            BackgroundColor="{Binding Background, Source={x:Reference this}}" >
+            BackgroundColor="{Binding Source={x:Reference this}, Path=Background}" >
 
             <control:CircleControl.CornerRadius>
                 <OnPlatform x:TypeArguments="x:Double"
                       iOS="30"
                       Android="36" />
             </control:CircleControl.CornerRadius>
-
         </control:CircleControl>
 
-        <Label AbsoluteLayout.LayoutBounds="0.5, 0.6, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Text="{Binding Text, Source={x:Reference this}}" FontSize="25" FontFamily="FontAwesome" TextColor="{Binding TextColor, Source={x:Reference this}}"/>
-
-
-        <AbsoluteLayout TranslationX="40" TranslationY="-5">
-            <template:CircleNotificationView HorizontalOptions="Center" Background="#26af5e" TextColor="#FFFFFF" Text="2"/>
-        </AbsoluteLayout>
+        <control:AwesomeLabelControl 
+            AbsoluteLayout.LayoutBounds="0.50, 0.6, -1, -1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Text="{Binding Source={x:Reference this}, Path=Text}"
+            FontSize="27"
+            TextColor="{Binding Source={x:Reference this}, Path=TextColor}"/>
+        
     </AbsoluteLayout>
 </ContentView>

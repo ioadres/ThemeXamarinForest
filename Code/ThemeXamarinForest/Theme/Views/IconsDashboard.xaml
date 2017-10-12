@@ -38,7 +38,7 @@
             </StackLayout>
 
             <StackLayout Grid.Row="0" Grid.Column="2" VerticalOptions="Center">
-                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#E40372" TextColor="#FFFFFF" Text="&#xf12e;"/>
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#E40372" TextColor="#FFFFFF" Text="&#xf017;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
             <!-- END Circle Notification -->
@@ -72,7 +72,7 @@
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="2" VerticalOptions="Center">
-                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#9DB4DA" TextColor="#FFFFFF" Text="&#xf108;"/>
+                <template:CircleIconDashboardView HorizontalOptions="Center" Background="#9DB4DA" TextColor="#FFFFFF" Text="&#xf0c2;"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
             <!-- END Circle Notification -->

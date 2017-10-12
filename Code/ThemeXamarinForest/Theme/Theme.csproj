@@ -62,11 +62,11 @@
     <Compile Include="Views\Templates\CircleIconDashboardView.xaml.cs">
       <DependentUpon>CircleIconDashboardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Templates\Models\CircleViewModel.cs" />
     <Compile Include="Views\Templates\CircleNotificationView.xaml.cs">
       <DependentUpon>CircleNotificationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FontAwaesome.cs" />
+    <Compile Include="Controls\AwesomeLabelControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
