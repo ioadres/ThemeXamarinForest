@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:template="clr-namespace:Theme.Views.Templates"
-    x:Name="this"
-    x:Class="Theme.Views.Templates.CircleIconDashboardView" xmlns:control="clr-namespace:Theme.Controls">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:template="clr-namespace:Theme.Views.Templates" x:Name="this" x:Class="Theme.Views.Templates.CircleIconDashboardView" xmlns:control="clr-namespace:Theme.Controls">
+    <AbsoluteLayout>
+        <control:BadgeControl 
+           Text="{Binding Source={x:Reference this}, Path=Text}"
+           BoxColor="{Binding Source={x:Reference this}, Path=Background}">
+            <x:Arguments>
+                <x:Double>50</x:Double>
+                <x:Double>20</x:Double>
+            </x:Arguments>
+        </control:BadgeControl>
+   
+        <!--- START Notification Circle -->
 
-    <AbsoluteLayout TranslationY="-10">
-        <control:CircleControl  
-            WidthRequest="65" 
-            HeightRequest="65" 
-            CornerRadius="36"  
-            TranslationY="5"
-            BackgroundColor="{Binding Source={x:Reference this}, Path=Background}" >
+        <control:BadgeControl 
+               TranslationX="30" TranslationY="-5"
+               Text="2"
+               BoxColor="#26af5e">
+                <x:Arguments>
+                    <x:Double>25</x:Double>
+                    <x:Double>15</x:Double>
+                </x:Arguments>
+            </control:BadgeControl>
+        </AbsoluteLayout>
+           
+        <!--- END Notification Circle -->
+ 
 
-            <control:CircleControl.CornerRadius>
-                <OnPlatform x:TypeArguments="x:Double"
-                      iOS="30"
-                      Android="36" />
-            </control:CircleControl.CornerRadius>
-        </control:CircleControl>
-
-        <control:AwesomeLabelControl 
-            AbsoluteLayout.LayoutBounds="0.50, 0.6, -1, -1"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Text="{Binding Source={x:Reference this}, Path=Text}"
-            FontSize="27"
-            TextColor="{Binding Source={x:Reference this}, Path=TextColor}"/>
-        
-    </AbsoluteLayout>
 </ContentView>

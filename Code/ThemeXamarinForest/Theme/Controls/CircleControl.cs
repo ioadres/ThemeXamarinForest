@@ -28,7 +28,6 @@ namespace Theme.Controls
 			get { return (double)GetValue(CornerRadiusProperty); }
 			set
 			{
-
 				SetValue(CornerRadiusProperty, value);
 			}
 		}

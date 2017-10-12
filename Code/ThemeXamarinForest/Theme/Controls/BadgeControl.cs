@@ -1,36 +1,85 @@
-﻿using System;
+﻿
+using System;
 using Xamarin.Forms;
 
 namespace Theme.Controls
 {
-    public class CircleControl : Frame
-	{		
-		public static readonly BindableProperty ActiveProperty =
-			  BindableProperty.Create(nameof(Active), typeof(bool), typeof(CircleControl), false);
-
-		public bool Active
-		{
-			get { return (bool)GetValue(ActiveProperty); }
-			set { SetValue(ActiveProperty, value); }
-		}		
+    public class BadgeControl : AbsoluteLayout
+	{
+		/// <summary>
+		/// The text property.
+		/// </summary>
+		public static readonly BindableProperty TextProperty =
+			BindableProperty.Create("Text", typeof(String), typeof(BadgeControl), "");
+    
+		
+        /// <summary>
+		/// The box color property.
+		/// </summary>
+		public static readonly BindableProperty BoxColorProperty =
+			BindableProperty.Create("BoxColor", typeof(Color), typeof(BadgeControl), Color.Default);
 
 		/// <summary>
-		/// The corner radius property.
+		/// The text.
 		/// </summary>
-		public static readonly BindableProperty RadiusProperty =
-			BindableProperty.Create("Radius", typeof(double), typeof(CircleControl), 0.0);
+		public string Text
+		{
+			get { return (string)GetValue(TextProperty); }
+			set { SetValue(TextProperty, value); }
+		}	
+
 
 		/// <summary>
-		/// Gets or sets the corner radius.
+		/// Gets or sets the color of the box.
 		/// </summary>
-		public double Radius
+		public Color BoxColor
 		{
-			get { return (double)GetValue(RadiusProperty); }
-			set
+			get { return (Color)GetValue(BoxColorProperty); }
+			set { SetValue(BoxColorProperty, value); }
+		}
+
+				
+
+		/// <summary>
+		/// The box.
+		/// </summary>
+		protected CircleControl Box;
+
+		/// <summary>
+		/// The label.
+		/// </summary>
+		protected AwesomeLabelControl LabelAwesomeLabelControl;
+
+		public BadgeControl(double size, double fontSize)
+		{
+            HeightRequest = size;
+            WidthRequest = HeightRequest;
+			// Box
+			Box = new CircleControl
 			{
+                CornerRadius = HeightRequest / 2,
+                BackgroundColor = BoxColor,
 
-				SetValue(RadiusProperty, value);
-			}
+
+			};
+            Box.SetBinding(BackgroundColorProperty, new Binding("BoxColor", source: this));
+
+			Children.Add(Box,new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
+
+
+            LabelAwesomeLabelControl = new AwesomeLabelControl
+			{
+				TextColor = Color.White,
+				FontSize = fontSize,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+			};
+			LabelAwesomeLabelControl.SetBinding(AwesomeLabelControl.TextProperty, new Binding("Text",
+				BindingMode.OneWay, source: this));
+            
+
+			Children.Add(LabelAwesomeLabelControl, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
+
 		}
 
 		

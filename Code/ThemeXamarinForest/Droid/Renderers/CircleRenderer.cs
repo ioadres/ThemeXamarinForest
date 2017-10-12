@@ -49,7 +49,7 @@ namespace Theme.Droid.Renders
 
 			GetDrawingRect(rect);
 
-            var radius = (float)(rect.Width() / box.Width * box.CornerRadius);
+			var radius = (float)(rect.Width() / box.Width * box.CornerRadius);
 
 			canvas.DrawRoundRect(new RectF(rect), radius, radius, paint);
 		}
