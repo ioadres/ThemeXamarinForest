@@ -24,10 +24,11 @@
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding EnterArticlesCommand}"
-                        ></TapGestureRecognizer>
+                        NumberOfTapsRequired="1"
+                        />
                 </StackLayout.GestureRecognizers>
                     
-                <template:CircleIconDashboard HorizontalOptions="Center" Background="#7E023F" TextColor="#FFFFFF" Text="&#xf2c0;" WithNotification="true" WithNotificationValue="2"/>
+                <template:CircleIconDashboard HorizontalOptions="Center" Background="#7E023E" TextColor="#FFFFFF" Text="&#xf2c0;" WithNotification="true" WithNotificationValue="2"/>
                 <Label Text="Articles" HorizontalTextAlignment="Center" FontSize="13" FontFamily="Droid Sans Mono"></Label>
             </StackLayout>
 

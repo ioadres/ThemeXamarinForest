@@ -17,8 +17,8 @@ namespace Theme.Controls
         /// The box color property.
         /// </summary>
         public static readonly BindableProperty BoxColorProperty =
-            BindableProperty.Create(nameof(BoxColor), typeof(Color), typeof(BadgeControl), Color.Default);
-       
+            BindableProperty.Create(nameof(BoxColor), typeof(Color), typeof(BadgeControl), Color.Black);
+
 
         /// <summary>
         /// The text.
@@ -52,35 +52,27 @@ namespace Theme.Controls
         public BadgeControl(double size, double fontSize)
         {
 
-                HeightRequest = size;
-                WidthRequest = HeightRequest;
-                // Box
-                Box = new CircleControl
-                {
-                    CornerRadius = HeightRequest / 2,
-                    BackgroundColor = BoxColor,
+            HeightRequest = size;
+            WidthRequest = HeightRequest;
+
+            Box = new CircleControl();           
+            Box.CornerRadius = HeightRequest / 2;
+            Box.BackgroundColor = BoxColor;
+            Box.SetBinding(BackgroundColorProperty, new Binding("BoxColor", source: this));   
+
+            LabelAwesomeLabelControl = new AwesomeLabelControl()
+            {
+                TextColor = Color.White,
+                FontSize = fontSize,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            LabelAwesomeLabelControl.SetBinding(AwesomeLabelControl.TextProperty, new Binding("Text", BindingMode.OneWay, source: this));
+
+            Children.Add(Box, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
+            Children.Add(LabelAwesomeLabelControl, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
 
 
-                };
-                Box.SetBinding(BackgroundColorProperty, new Binding("BoxColor", source: this));
-
-                Children.Add(Box, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
-
-
-                LabelAwesomeLabelControl = new AwesomeLabelControl
-                {
-                    TextColor = Color.White,
-                    FontSize = fontSize,
-                    HorizontalTextAlignment = TextAlignment.Center,
-                    VerticalTextAlignment = TextAlignment.Center
-                };
-                LabelAwesomeLabelControl.SetBinding(AwesomeLabelControl.TextProperty, new Binding("Text",
-                    BindingMode.OneWay, source: this));
-
-
-                Children.Add(LabelAwesomeLabelControl, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
-
-           
         }
 
 

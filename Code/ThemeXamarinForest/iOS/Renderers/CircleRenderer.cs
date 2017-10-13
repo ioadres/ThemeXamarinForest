@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using Theme.iOS.Renderers;
 using Theme.Controls;
-using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
