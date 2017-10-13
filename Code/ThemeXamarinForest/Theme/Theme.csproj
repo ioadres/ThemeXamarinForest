@@ -56,8 +56,8 @@
     </Compile>
     <Compile Include="Controls\CircleControl.cs" />
     <Compile Include="ViewModels\IconsDashboardViewModel.cs" />
-    <Compile Include="Views\Templates\CircleIconDashboardView.xaml.cs">
-      <DependentUpon>CircleIconDashboardView.xaml</DependentUpon>
+    <Compile Include="Views\Templates\CircleIconDashboard.xaml.cs">
+      <DependentUpon>CircleIconDashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FontAwaesome.cs" />
     <Compile Include="Controls\AwesomeLabelControl.cs" />
@@ -101,7 +101,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Templates\CircleIconDashboardView.xaml">
+    <EmbeddedResource Include="Views\Templates\CircleIconDashboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

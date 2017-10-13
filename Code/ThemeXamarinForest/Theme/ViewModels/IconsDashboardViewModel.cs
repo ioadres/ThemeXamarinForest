@@ -12,7 +12,7 @@ namespace Theme.ViewModels
         }
 
         public DelegateCommand EnterArticlesCommand { get; set; }
-        public void EnterArticles()
+        private void EnterArticles()
         {
 
         }

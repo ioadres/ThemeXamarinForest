@@ -29,6 +29,7 @@ namespace Theme.iOS
                         .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
                         .RegisterAssemblyFromType<CircleControl>()
                         .RegisterAssemblyFromType<CircleRenderer>()
+                .RegisterAssemblyFromType<BadgeControl>()
                             ));
 
 

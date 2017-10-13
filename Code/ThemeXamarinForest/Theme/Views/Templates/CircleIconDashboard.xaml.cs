@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace Theme.Views.Templates
 {
-    public partial class CircleIconDashboardView : ContentView
+    public partial class CircleIconDashboard : ContentView
     {
-        public static readonly BindableProperty BackgroundProperty = BindableProperty.Create(nameof(Background), typeof(Color), typeof(CircleIconDashboardView), Color.White);
-        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(CircleIconDashboardView), string.Empty);
-        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(CircleIconDashboardView),Color.Black);
-        public static readonly BindableProperty WithNotificationProperty = BindableProperty.Create(nameof(WithNotification), typeof(bool), typeof(CircleIconDashboardView), false);
-        public static readonly BindableProperty WithNotificationValueProperty = BindableProperty.Create(nameof(WithNotificationValue), typeof(int), typeof(CircleIconDashboardView), 0);
+        public static readonly BindableProperty BackgroundProperty = BindableProperty.Create(nameof(Background), typeof(Color), typeof(CircleIconDashboard), Color.White);
+        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(CircleIconDashboard), string.Empty);
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(CircleIconDashboard),Color.Black);
+        public static readonly BindableProperty WithNotificationProperty = BindableProperty.Create(nameof(WithNotification), typeof(bool), typeof(CircleIconDashboard), false);
+        public static readonly BindableProperty WithNotificationValueProperty = BindableProperty.Create(nameof(WithNotificationValue), typeof(int), typeof(CircleIconDashboard), 0);
 
 		public Color TextColor
 		{
@@ -75,7 +75,7 @@ namespace Theme.Views.Templates
 			}
 		}
 
-		public CircleIconDashboardView()
+		public CircleIconDashboard()
         {
             InitializeComponent();
             this.Content.BindingContext = this;
