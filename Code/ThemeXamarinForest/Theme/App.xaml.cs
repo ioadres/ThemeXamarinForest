@@ -6,7 +6,9 @@ using Microsoft.Practices.Unity;
 using Prism.Mvvm;
 using Theme.Views.Templates;
 using System;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Theme
 {
     public partial class App : PrismApplication

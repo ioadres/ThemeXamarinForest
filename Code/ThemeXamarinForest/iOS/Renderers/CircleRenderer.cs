@@ -22,12 +22,7 @@ namespace Theme.iOS.Renderers
         
         protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
 		{
-			base.OnElementChanged(e);
-			/* (Control == null)
-			{
-				var circleView = new BoxView();
-				SetNativeControl(circleView);
-			}*/
+			base.OnElementChanged(e);			
 		}
 
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -48,6 +43,12 @@ namespace Theme.iOS.Renderers
 		{
             this.Layer.CornerRadius = Convert.ToSingle(CircleControl.CornerRadius);       
             this.Layer.BackgroundColor = Element.BackgroundColor.ToCGColor();
+
+            if (CircleControl.WithBorder)
+            {
+                this.Layer.BorderWidth = CircleControl.BorderWidth;
+                this.Layer.BorderColor = CircleControl.BackgroundColor.ToCGColor();
+            }
 		}
 	}
 }

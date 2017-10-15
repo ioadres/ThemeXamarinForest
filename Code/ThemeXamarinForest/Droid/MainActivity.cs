@@ -33,7 +33,7 @@ namespace Theme.Droid
 
             LoadApplication(new App(new AndroidInitializer()));
 
-           /*LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
+            /*LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
 				 .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
 						.RegisterAssemblyFromType<CircleControl>()
                         .RegisterAssemblyFromType<BadgeControl>()
@@ -41,7 +41,6 @@ namespace Theme.Droid
                         .RegisterAssemblyFromType<AwesomeLabelControl>()
                         .RegisterAssemblyFromType<AwesomeLabelRenderer>()
 			));*/
-            
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
