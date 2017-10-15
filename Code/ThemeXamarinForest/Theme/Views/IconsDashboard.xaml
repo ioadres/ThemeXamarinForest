@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
-    prism:ViewModelLocator.AutowireViewModel="True" 
-    xmlns:control="clr-namespace:Theme.Controls"
+    prism:ViewModelLocator.AutowireViewModel="True"
     xmlns:template="clr-namespace:Theme.Views.Templates"
     xmlns:bLocal="clr-namespace:Theme.Behaviors;assembly=Theme"
     x:Class="Theme.Views.IconsDashboard" 
@@ -122,7 +121,7 @@
             </StackLayout>
             <!-- END Circle Notification -->
            
-           <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="3" HeightRequest="1" WidthRequest="1"  VerticalOptions="End" BackgroundColor="#a1a1a1"></AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="3" HeightRequest="1" WidthRequest="1"  VerticalOptions="End" BackgroundColor="#a1a1a1"></AbsoluteLayout>
             <AbsoluteLayout Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="1" WidthRequest="1" VerticalOptions="End" BackgroundColor="#a1a1a1"></AbsoluteLayout>
             <AbsoluteLayout Grid.RowSpan="3" Grid.Column="0"  HeightRequest="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#a1a1a1"></AbsoluteLayout>
             <AbsoluteLayout Grid.RowSpan="3" Grid.Column="1"  HeightRequest="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#a1a1a1"></AbsoluteLayout>

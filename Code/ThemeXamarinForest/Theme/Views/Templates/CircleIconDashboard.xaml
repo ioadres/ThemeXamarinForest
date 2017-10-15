@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:template="clr-namespace:Theme.Views.Templates" x:Name="this" x:Class="Theme.Views.Templates.CircleIconDashboard" xmlns:control="clr-namespace:Theme.Controls">
+   xmlns:template="clr-namespace:Theme.Views.Templates" x:Name="this" x:Class="Theme.Views.Templates.CircleIconDashboard"
+   xmlns:control="clr-namespace:Theme.Controls;assembly=Theme">
     <AbsoluteLayout>
         <control:BadgeControl 
            Text="{Binding Source={x:Reference this}, Path=Text}"
