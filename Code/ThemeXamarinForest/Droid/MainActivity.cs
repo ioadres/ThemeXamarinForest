@@ -16,7 +16,6 @@ using Prism;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 using Theme.Droid.Renderers;
-using Theme.Behaviors;
 
 namespace Theme.Droid
 {
@@ -32,9 +31,9 @@ namespace Theme.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            //LoadApplication(new App(new AndroidInitializer()));
+            LoadApplication(new App(new AndroidInitializer()));
 
-            LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
+           /* LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(this, new Config("Good Gorilla")
                                                                             .RegisterAssembliesFromTypes<Prism.IPlatformInitializer<AndroidInitializer>, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
 						.RegisterAssemblyFromType<CircleControl>()
                         .RegisterAssemblyFromType<BadgeControl>()
@@ -42,7 +41,7 @@ namespace Theme.Droid
 						.RegisterAssemblyFromType<CircleRenderer>()
                         .RegisterAssemblyFromType<AwesomeLabelRenderer>()
                         .RegisterAssemblyFromType<AnimationColumnDashboardBehavior>()
-			));
+			));*/
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

@@ -17,15 +17,17 @@ namespace Theme
 
         protected async override void OnInitialized()
         {
-
             InitializeComponent();
-            await NavigationService.NavigateAsync("IconsDashboard");
+            await NavigationService.NavigateAsync("MasterPage/BaseNavigationPage/IconsDashboardPage");
         }
 
         protected override void RegisterTypes()
         {
+            Container.RegisterTypeForNavigation<MasterPage, MasterPageViewModel>();
+            Container.RegisterTypeForNavigation<MenuPage, MenuPageViewModel>();
+            Container.RegisterTypeForNavigation<BaseNavigationPage, BaseNavigationPageViewModel>();
             Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
-            Container.RegisterTypeForNavigation<IconsDashboard, IconsDashboardViewModel>();
+            Container.RegisterTypeForNavigation<IconsDashboardPage, IconsDashboardPageViewModel>();
         }
     }
 }

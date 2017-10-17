@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace Theme.ViewModels
 {
-    public class IconsDashboardViewModel : ViewModelBase
+    public class IconsDashboardPageViewModel : ViewModelBase
     {      
         private int _count;
         public int Count
@@ -18,7 +18,7 @@ namespace Theme.ViewModels
         public DelegateCommand EnterArticlesCommand { get; set; }
         public DelegateCommand EnterNavigationCommand { get; set; }
 
-        public IconsDashboardViewModel(INavigationService navigationService) : base(navigationService)
+        public IconsDashboardPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             EnterArticlesCommand = new DelegateCommand(EnterArticles);
             EnterNavigationCommand = new DelegateCommand(EnterNavigation);

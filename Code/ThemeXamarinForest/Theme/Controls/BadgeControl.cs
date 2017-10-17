@@ -71,10 +71,7 @@ namespace Theme.Controls
 
             Children.Add(Box, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
             Children.Add(LabelAwesomeLabelControl, new Rectangle(0, 0, 1.0, 1.0), AbsoluteLayoutFlags.All);
-
-
         }
-
 
     }
 }

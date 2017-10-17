@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Theme.Views
 {
-    public partial class IconsDashboard : ContentPage
+    public partial class IconsDashboardPage : ContentPage
     {
-        public IconsDashboard()
+        public IconsDashboardPage()
         {
             try
             {

@@ -8,10 +8,12 @@ using Prism.Commands;
 using System.Reflection;
 using Prism.Behaviors;
 
-namespace Theme.Behaviors
+namespace Theme.Animations
 {
     public class AnimationColumnDashboardBehavior : BehaviorBase<View>
     {
+        private TapGestureRecognizer _gesture;
+
         public static readonly BindableProperty CommandProperty =
             BindableProperty.Create(nameof(Command), typeof(DelegateCommand), typeof(AnimationColumnDashboardBehavior), null);
 
@@ -23,9 +25,6 @@ namespace Theme.Behaviors
                 SetValue(CommandProperty, value);
             }
         }
-
-        private TapGestureRecognizer _gesture;
-
 
         protected override void OnAttachedTo(View bindable)
         {
@@ -49,7 +48,6 @@ namespace Theme.Behaviors
             base.OnDetachingFrom(bindable);
             AssociatedObject.GestureRecognizers.Remove(_gesture);
             _gesture = null;
-
         }
 
         protected Task BeginAnimation()

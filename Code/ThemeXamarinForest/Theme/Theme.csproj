@@ -33,7 +33,7 @@
     <EmbeddedResource Include="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\IconsDashboard.xaml">
+    <EmbeddedResource Include="Views\IconsDashboardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -45,24 +45,35 @@
       <DependentUpon>ThemePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MasterPageViewModel.cs" />
+    <Compile Include="ViewModels\MenuPageViewModel.cs" />
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\BaseNavigationPageViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Views\IconsDashboard.xaml.cs">
-      <DependentUpon>IconsDashboard.xaml</DependentUpon>
+    <Compile Include="Views\IconsDashboardPage.xaml.cs">
+      <DependentUpon>IconsDashboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CircleControl.cs" />
-    <Compile Include="ViewModels\IconsDashboardViewModel.cs" />
+    <Compile Include="ViewModels\IconsDashboardPageViewModel.cs" />
+    <Compile Include="Views\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseNavigationPage.xaml.cs">
+      <DependentUpon>BaseNavigationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Templates\CircleIconDashboard.xaml.cs">
       <DependentUpon>CircleIconDashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FontAwaesome.cs" />
     <Compile Include="Controls\AwesomeLabelControl.cs" />
     <Compile Include="Controls\BadgeControl.cs" />
-    <Compile Include="Behaviors\AnimationColumnDashboardBehavior.cs" />
+    <Compile Include="Animations\AnimationColumnDashboardBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -100,10 +111,27 @@
   <ItemGroup>
     <Folder Include="Behaviors\" />
     <Folder Include="Models\" />
-    <Folder Include="Animations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Templates\CircleIconDashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BaseNavigationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

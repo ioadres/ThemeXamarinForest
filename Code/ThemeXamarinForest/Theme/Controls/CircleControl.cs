@@ -33,7 +33,6 @@ namespace Theme.Controls
             set { SetValue(WithBorderProperty, value); }
         }
 
-
 		public double CornerRadius
 		{
 			get { return (double)GetValue(CornerRadiusProperty); }
@@ -59,8 +58,6 @@ namespace Theme.Controls
 			{
 				SetValue(BorderColorProperty, value);
 			}
-		}
-
-		
+		}		
 	}
 }
