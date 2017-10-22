@@ -74,6 +74,7 @@
     <Compile Include="Controls\AwesomeLabelControl.cs" />
     <Compile Include="Controls\BadgeControl.cs" />
     <Compile Include="Animations\AnimationColumnDashboardBehavior.cs" />
+    <Compile Include="Models\MenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

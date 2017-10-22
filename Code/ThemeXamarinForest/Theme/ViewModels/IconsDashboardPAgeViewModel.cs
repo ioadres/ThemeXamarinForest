@@ -20,6 +20,7 @@ namespace Theme.ViewModels
 
         public IconsDashboardPageViewModel(INavigationService navigationService) : base(navigationService)
         {
+            Title = "Dashboard";
             EnterArticlesCommand = new DelegateCommand(EnterArticles);
             EnterNavigationCommand = new DelegateCommand(EnterNavigation);
         }

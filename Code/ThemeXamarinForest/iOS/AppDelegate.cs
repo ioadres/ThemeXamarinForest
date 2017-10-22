@@ -19,22 +19,18 @@ namespace Theme.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-
-       
+            global::Xamarin.Forms.Forms.Init();       
            
-                       LoadApplication(new App(new iOSInitializer()));
+           //LoadApplication(new App(new iOSInitializer()));
 
-                      /*  LoadApplication(UXDivers.Gorilla.iOS.Player.CreateApplication(
-                            new UXDivers.Gorilla.Config("Good Gorilla")
-                        .RegisterAssembliesFromTypes<Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
-                        .RegisterAssemblyFromType<CircleControl>()
-                        .RegisterAssemblyFromType<CircleRenderer>()
+            LoadApplication(UXDivers.Gorilla.iOS.Player.CreateApplication(
+                new UXDivers.Gorilla.Config("Good Gorilla")
+                .RegisterAssembliesFromTypes<Prism.IPlatformInitializer<iOSInitializer>,Prism.IActiveAware, Prism.PrismApplicationBase<App>, Prism.Unity.PrismApplication>()
+                .RegisterAssemblyFromType<CircleControl>()
+                .RegisterAssemblyFromType<CircleRenderer>()
                 .RegisterAssemblyFromType<BadgeControl>()
-                            ));*/
-
-
-
+                .RegisterAssembly(typeof(Theme.ViewModels.ViewModelBase).Assembly)                            
+            ));
 
 
 			return base.FinishedLaunching(app, options);

@@ -6,6 +6,7 @@
     xmlns:template="clr-namespace:Theme.Views.Templates"
     xmlns:animations="clr-namespace:Theme.Animations;assembly=Theme"
     x:Class="Theme.Views.IconsDashboardPage" 
+    Title="{Binding Title}"
     >
 
     <ContentPage.Content>

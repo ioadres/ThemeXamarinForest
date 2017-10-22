@@ -2,6 +2,7 @@
   "knownAssemblies": [
     { "name": "Prism" },
     { "name": "Prism.Forms" },
+    { "name": "Prism.Mvvm" },
     { "name": "Prism.Unity.Forms" },
     { "name": "Prism.Core" },
 

@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Theme.Droid</RootNamespace>
     <AssemblyName>Theme.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -143,6 +143,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\logo_70x70.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\hamburguer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\hamburguer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\hamburguer.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
